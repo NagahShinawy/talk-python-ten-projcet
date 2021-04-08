@@ -1,1 +1,1 @@
-# talk-python-ten-projcet
+# talk-python-ten-projcets
