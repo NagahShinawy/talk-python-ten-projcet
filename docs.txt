@@ -1,0 +1,11 @@
+False : false is false
+[] is false
+{} is false
+"" is false
+0 is false
+0.0 is false
+0 is false
+None is false
+
+
+everything else is True

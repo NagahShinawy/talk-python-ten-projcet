@@ -20,9 +20,9 @@ def main():
     computer_num = computer_number()
     while user_num != computer_num:
         if user_num > computer_num:
-            print("You Number is HIGHER than computer number")
+            print(f"You Number <{user_num}> is HIGHER than computer number")
         else:
-            print("You Number is LOWER than computer number")
+            print(f"You Number <{user_num}> is LOWER than computer number")
         user_num = user_number()
 
 
