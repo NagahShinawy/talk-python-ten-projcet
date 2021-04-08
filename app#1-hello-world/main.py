@@ -9,6 +9,8 @@ def get_username():
 
 
 def validate_username(username):
+    if not username:
+        raise ValueError("username can not be empty.")
     matches = re.findall(r'^[a-zA-Z]+$', username)
     if matches:
         return matches[0]
