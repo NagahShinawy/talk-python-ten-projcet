@@ -1,6 +1,7 @@
 import os
-from app import app
 import random
+from app import app
+
 BASEDIR = os.getcwd().split("\\")[-1]
 
 
