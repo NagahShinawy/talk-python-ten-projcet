@@ -1,5 +1,6 @@
 import os
 from datetime import date, datetime
+
 from app import app
 
 BASEDIR = os.getcwd().split("\\")[-1]
@@ -49,12 +50,19 @@ def get_birthday():
 
 
 def days_in_between(start_date, end_date):
-    delta = start_date - end_date
-    return delta.days
+    delta = start_date - end_date  # you can get the seconds , then convert from seconds to days
+    days = delta.days
+    if days < 0:  # in case of Programmer swap the dob with today (it is ok to show days in positive values)
+        days = -days  # the same of -1 * days (pure python)
+    return days
+
+
+def main():
+    today = date.today()
+    dob = get_birthday()
+    print(f"Your age in days is {days_in_between(today, dob)} Days")
 
 
 if __name__ == '__main__':
     app(BASEDIR)
-    today = date.today()
-    dob = get_birthday()
-    print(f"Your age in days is {days_in_between(today, dob)}")
+    main()
