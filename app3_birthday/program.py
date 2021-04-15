@@ -2,9 +2,9 @@ import datetime
 
 
 def print_header():
-    print('---------------------------')
-    print('      BIRTHDAY APP')
-    print('---------------------------')
+    print("---------------------------")
+    print("      BIRTHDAY APP")
+    print("---------------------------")
     print()
 
 

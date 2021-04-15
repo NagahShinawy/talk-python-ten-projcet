@@ -27,6 +27,6 @@ def main():
         user_num = user_number()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     app(BASEDIR)
     main()

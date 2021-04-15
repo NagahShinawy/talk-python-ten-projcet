@@ -1,6 +1,7 @@
 import os
 import re
 from app import app
+
 BASEDIR = os.getcwd().split("\\")[-1]
 
 
@@ -11,7 +12,7 @@ def get_username():
 def validate_username(username):
     if not username:
         raise ValueError("username can not be empty.")
-    matches = re.findall(r'^[a-zA-Z]+$', username)
+    matches = re.findall(r"^[a-zA-Z]+$", username)
     if matches:
         return matches[0]
     raise ValueError(f"Invalid username <{username}>. no numbers, symbols")
@@ -27,6 +28,6 @@ def main():
     print(welcome(validated))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     app(BASEDIR)
     main()

@@ -1,0 +1,63 @@
+False : false is false
+[] is false
+{} is false
+"" is false
+0 is false
+0.0 is false
+0 is false
+None is false
+
+
+everything else is True
+
+=================================================
+
+
+1 - select block of code  ==> [shift + ctrl + alt + t ] ==> for generete methods
+
+2- journal.test() while test not defined at journal ==> alt + enter to create it
+
+3- ctrl + q (f1 for mac) show doc of function
+
+4- ctrl _ shift _ i ==> show implemntation of function
+
+=================================
+
+show doc of method, module using help
+
+
+from app4_journal.journal import load
+help(load)
+Help on function load in module app4_journal.journal:
+load(name:str) -> List[str]
+    if file exist , add entries to data list
+    :param name: filename of journal with no extension
+    :return: list of journals
+
+
+========================================
+
+doc string: string with triple qoutes at the beginning of the method, class, module
+- this description is used in genereting docs and intellisense
+
+
+==========================================
+
+print(__file__)  # show fullpath of running file
+print(__name__) # show how file excute, file runs as python script (__main__) or python module(__name__ in this case = python module name)
+
+===========================================
+
+Why is the _ _name_ _ variable used?
+The __name__ variable (two underscores before and after) is a special Python variable. It gets its value depending on how we execute the containing script.
+
+Sometimes you write a script with functions that might be useful in other scripts as well. In Python, you can import that script as a module in another script.
+
+Thanks to this special variable, you can decide whether you want to run the script. Or that you want to import the functions defined in the script.
+
+What values can the __name__ variable contain?
+When you run your script, the __name__ variable equals __main__. When you import the containing script, it will contain the name of the script.
+
+Let us take a look at these two use cases and describe the process with two illustrations.
+
+WHEN YOUR PROGRAMM IS USED BY ANOTHER PROGRAM
