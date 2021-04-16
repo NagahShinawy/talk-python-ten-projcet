@@ -21,6 +21,17 @@ everything else is True
 
 4- ctrl _ shift _ i ==> show implemntation of function
 
+5- what is pycharm lens mode ?
+        - how to find errors in code.
+        - and potential danger zones
+        - keep track of items that need to be finished
+
+
+6- what is pycharm console
+    - python interactive console
+    - calc values on the fly
+
+7- pycharm package manager (like pip)
 =================================
 
 show doc of method, module using help
@@ -61,3 +72,5 @@ When you run your script, the __name__ variable equals __main__. When you import
 Let us take a look at these two use cases and describe the process with two illustrations.
 
 WHEN YOUR PROGRAMM IS USED BY ANOTHER PROGRAM
+
+===========================================
