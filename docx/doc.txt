@@ -34,6 +34,9 @@ everything else is True
 7- pycharm package manager (like pip)
 
 8 pylint , flake8 : code analaysis, quality tools for python
+ - running summary & detailed reports about your code
+
+>> pylint section3/ --reports=y
 =================================
 
 show doc of method, module using help
