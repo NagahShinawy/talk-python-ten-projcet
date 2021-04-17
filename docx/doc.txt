@@ -32,6 +32,8 @@ everything else is True
     - calc values on the fly
 
 7- pycharm package manager (like pip)
+
+8 pylint , flake8 : code analaysis, quality tools for python
 =================================
 
 show doc of method, module using help
