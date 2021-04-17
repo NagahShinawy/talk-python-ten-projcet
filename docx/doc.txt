@@ -37,6 +37,20 @@ everything else is True
  - running summary & detailed reports about your code
 
 >> pylint section3/ --reports=y
+
+-----------------
+9- testing with pycharm:
+
+settings >>  python integrated tools >> testing ( you can chosse testing framework) (default unittests)
+
+
+10- pycharm templates
+>>settings >> templates >> CHOOSE YOUR FILE TEMPLATE [html, css, python, flask, ...]
+
+11- add info for python file by deafault
+
+>> settings >> templates >> python script >> type " create by ${USER} at ${DATE} "
+every time you create python file the output looks like (created by Nagaj at 17/04/2021)
 =================================
 
 show doc of method, module using help
