@@ -50,6 +50,11 @@ def main():
     run_event_loop()
 
 
+def find(arr, k):
+    return "Yes" if k in arr else "No"
+
+
 if __name__ == "__main__":
-    app(BASEDIR)
-    main()
+    # app(BASEDIR)
+    # main()
+    print(find([2, 3, 1], 1))

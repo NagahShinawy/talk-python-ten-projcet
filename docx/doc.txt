@@ -51,6 +51,10 @@ settings >>  python integrated tools >> testing ( you can chosse testing framewo
 
 >> settings >> templates >> python script >> type " create by ${USER} at ${DATE} "
 every time you create python file the output looks like (created by Nagaj at 17/04/2021)
+
+11- this outout comes from pycarm varaibles
+https://www.jetbrains.com/help/pycharm/file-template-variables.html#predefined_template_variables
+
 =================================
 
 show doc of method, module using help
