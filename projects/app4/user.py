@@ -1,8 +1,9 @@
 """
 created by Nagaj at 18/04/2021
 """
-from projects.app4.cmd import CMD
-from projects.app4.db import load, save
+from projects.app4.cmd import CMD, AcceptOrIgnore
+from projects.app4.constants import CLOSE, ADD, LIST, ACCEPT
+from projects.app4.db import load, save, to_html
 from projects.app4.journal import Journal
 
 
@@ -13,7 +14,7 @@ class User:
     def add_entry(self) -> None:
         text = input("Enter Your Text: ")
         journal = Journal(text)
-        self.entries.append(journal)
+        self.entries.append(journal.text + "\n")
 
     def show_entries(self) -> None:
         if self.entries:
@@ -24,20 +25,21 @@ class User:
 
     def event_loop(self):
         command = self.run_command()
-        entries = load()
-        if entries:
-            self.entries.extend(entries)
-        while command != 'x':
+        self.entries = load()
+        while command != CLOSE:
 
-            if command == 'a':
+            if command == ADD:
                 self.add_entry()
 
-            if command == 'l':
+            if command == LIST:
                 self.show_entries()
 
             command = self.run_command()
 
         save(self.entries)
+        is_accepted = AcceptOrIgnore(input("Do you want to export to html ? y[yes], n[no]"))
+        if is_accepted == ACCEPT:
+            to_html(self.entries)
         print("Done. Goodbye")
 
     @staticmethod

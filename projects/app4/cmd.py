@@ -15,3 +15,17 @@ class CMD:
         while command not in self.COMMANDS:
             command = input(f"Invalid <{command}> Enter Your Command a[add], l[list], x[close]")
         return command
+
+
+class AcceptOrIgnore(CMD):
+    COMMANDS = {
+        'y', 'n'
+    }
+
+    def set_command(self, command):
+        while command not in self.COMMANDS:
+            command = input(f"Invalid <{command}> Enter Your Command y[yes], n[no]")
+        return command
+
+    def __eq__(self, other):
+        return self.command == other
