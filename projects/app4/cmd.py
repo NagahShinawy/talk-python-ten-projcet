@@ -16,6 +16,9 @@ class CMD:
             command = input(f"Invalid <{command}> Enter Your Command a[add], l[list], x[close]")
         return command
 
+    def __eq__(self, other):
+        return self.command == other
+
 
 class AcceptOrIgnore(CMD):
     COMMANDS = {
@@ -26,6 +29,3 @@ class AcceptOrIgnore(CMD):
         while command not in self.COMMANDS:
             command = input(f"Invalid <{command}> Enter Your Command y[yes], n[no]")
         return command
-
-    def __eq__(self, other):
-        return self.command == other

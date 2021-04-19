@@ -46,4 +46,4 @@ class User:
     def run_command():
         command = input("Enter Your Command a[add], l[list], x[close]")
         cmd = CMD(command)
-        return cmd.command
+        return cmd
