@@ -9,7 +9,6 @@ import json
 import os
 from typing import List
 
-# from projects.app4.constants import BREAK_LINE
 
 import jinja2
 
@@ -52,7 +51,7 @@ def to_html(entries):
 
 def to_json(entries: List[str]):
     json_path, saves_path = get_saves_path_and_file_path("journals.json")
-    data = [{"journal": entry.strip()} for entry in entries]
+    data = [{"id": i + 1, "journal": entries[i].strip()} for i in range(len(entries))]
     print(f"saving json to '{json_path}'")
     with open(json_path, "w") as f:
         json.dump(data, f, indent=4)
