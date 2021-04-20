@@ -1,4 +1,4 @@
-"""
+﻿"""
 created by Nagaj at 18/04/2021
 """
 from projects.app4.cmd import CMD, AcceptOrIgnore

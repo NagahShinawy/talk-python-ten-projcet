@@ -12,7 +12,8 @@ ADD = "a"
 BASIC_MSG = "Enter Your Command a[add], l[list], x[close]"
 HTML_MSG = "Do you want to export to html ? y[yes], n[no]"
 JSON_MSG = "Do you want to export to json ? y[yes], n[no]"
-
+INVALID__OPTION_COMMAND = "Invalid <{command}> Enter Your Command a[add], l[list], x[close]"
+INVALID_ACCEPT_REFUSE_COMMAND = "Invalid <{command}> Enter Your Command y[yes], n[no]"
 # #############################
 
 BREAK_LINE = "#" * 50 + "\n"

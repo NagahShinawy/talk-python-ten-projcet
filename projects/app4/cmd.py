@@ -1,6 +1,7 @@
 """
 created by Nagaj at 18/04/2021
 """
+from projects.app4.constants import INVALID__OPTION_COMMAND, INVALID_ACCEPT_REFUSE_COMMAND
 
 
 class CMD:
@@ -12,7 +13,7 @@ class CMD:
     def set_command(self, command):
         while command not in self.COMMANDS:
             command = input(
-                f"Invalid <{command}> Enter Your Command a[add], l[list], x[close]"
+                INVALID__OPTION_COMMAND.format(command=command)
             )
         return command
 
@@ -25,5 +26,5 @@ class AcceptOrIgnore(CMD):
 
     def set_command(self, command):
         while command not in self.COMMANDS:
-            command = input(f"Invalid <{command}> Enter Your Command y[yes], n[no]")
+            command = input(INVALID_ACCEPT_REFUSE_COMMAND.format(command=command))
         return command
