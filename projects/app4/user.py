@@ -2,8 +2,8 @@
 created by Nagaj at 18/04/2021
 """
 from projects.app4.cmd import CMD, AcceptOrIgnore
-from projects.app4.constants import CLOSE, ADD, LIST, ACCEPT
-from projects.app4.db import load, save, to_html
+from projects.app4.constants import CLOSE, ADD, LIST, ACCEPT, BASIC_MSG , HTML_MSG, JSON_MSG
+from projects.app4.db import load, save, to_html, to_json
 from projects.app4.journal import Journal
 
 
@@ -23,7 +23,7 @@ class User:
         else:
             print("No Items")
 
-    def event_loop(self):
+    def event_loop(self) -> None:
         command = self.run_command()
         self.entries = load()
         while command != CLOSE:
@@ -37,13 +37,21 @@ class User:
             command = self.run_command()
 
         save(self.entries)
-        is_accepted = AcceptOrIgnore(input("Do you want to export to html ? y[yes], n[no]"))
-        if is_accepted == ACCEPT:
+
+        if self.accept_export(HTML_MSG) == ACCEPT:
             to_html(self.entries)
+
+        if self.accept_export(JSON_MSG) == ACCEPT:
+            to_json(self.entries)
+
         print("Done. Goodbye")
 
     @staticmethod
-    def run_command():
-        command = input("Enter Your Command a[add], l[list], x[close]")
+    def accept_export(msg):
+        return AcceptOrIgnore(input(msg))
+
+    @staticmethod
+    def run_command(msg=BASIC_MSG):
+        command = input(msg)
         cmd = CMD(command)
         return cmd
