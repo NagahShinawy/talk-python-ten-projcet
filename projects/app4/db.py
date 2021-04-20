@@ -8,7 +8,9 @@ load journals, save journal, add new journal
 import json
 import os
 from typing import List
+
 import jinja2
+
 from projects.app4.constants import SAVING
 
 
@@ -63,7 +65,9 @@ def to_json(entries: List[str]):
     :param entries:
     :return:
     """
-    (*json_path,) = get_saves_path_and_file_path("journals.json")
+    (json_path, saves_path) = get_saves_path_and_file_path(
+        "journals.json"
+    )  # pylint: disable=W0612
     data = [{"id": i + 1, "journal": entries[i].strip()} for i in range(len(entries))]
     print(SAVING.format(fullpath=json_path))
     with open(json_path, "w") as file:
