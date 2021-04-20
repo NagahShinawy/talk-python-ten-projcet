@@ -41,7 +41,7 @@ class User:
         :return:
         """
         if self.entries:
-            for start, entry in enumerate(self.entries, start=1):
+            for start, entry in enumerate(self.entries[::-1], start=1):
                 print(start, entry)
         else:
             print(NO_ITEMS_TO_SHOW)
