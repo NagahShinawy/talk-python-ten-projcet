@@ -7,27 +7,39 @@ from projects.app4.constants import (
     ADD,
     LIST,
     ACCEPT,
-    BASIC_MSG,
+    OPENING_MSG,
     HTML_MSG,
     JSON_MSG,
     ENTER_TEXT,
     NO_ITEMS_TO_SHOW,
-    BYE
+    BYE,
 )
 from projects.app4.db import load, save, to_html, to_json
 from projects.app4.journal import Journal
 
 
 class User:
+    """
+    user actions add, list, exist
+    """
+
     def __init__(self):
         self.entries = []
 
     def add_entry(self) -> None:
+        """
+
+        :return:
+        """
         text = input(ENTER_TEXT)
         journal = Journal(text)
         self.entries.append(journal.text + "\n")
 
     def show_entries(self) -> None:
+        """
+
+        :return:
+        """
         if self.entries:
             for start, entry in enumerate(self.entries, start=1):
                 print(start, entry)
@@ -35,6 +47,10 @@ class User:
             print(NO_ITEMS_TO_SHOW)
 
     def event_loop(self) -> None:
+        """
+
+        :return:
+        """
         command = self.run_command()
         self.entries = load()
         while command != CLOSE:
@@ -59,10 +75,20 @@ class User:
 
     @staticmethod
     def accept_export(msg):
+        """
+
+        :param msg:
+        :return:
+        """
         return AcceptOrIgnore(input(msg))
 
     @staticmethod
-    def run_command(msg=BASIC_MSG):
-        command = input(msg)
+    def run_command(opening_msg=OPENING_MSG):
+        """
+
+        :param opening_msg:
+        :return:
+        """
+        command = input(opening_msg)
         cmd = CMD(command)
         return cmd
