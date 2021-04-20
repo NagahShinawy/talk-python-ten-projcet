@@ -13,7 +13,7 @@ def run_event_loop():
     count_journals = 1
     while command != "x":
         command = input("[L]ist entries [A]dd an entry, E[x]it: ").lower().strip()
-        if command == '':
+        if command == "":
             print("Can not be empty")
             continue
         if command == "l":

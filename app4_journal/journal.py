@@ -15,19 +15,19 @@ def load(name: str) -> List[str]:
     fullpath = get_full_path(name)
     data = []
     if os.path.exists(fullpath):
-        with open(fullpath, 'r') as fin:
+        with open(fullpath, "r") as fin:
             entries = fin.readlines()
 
             for entry in entries:
                 data.append(entry)
-            data.append("#" * 30 + '\n')
+            data.append("#" * 30 + "\n")
     return data
 
 
 def save(name: str, journal_data: List[str]):
     fullpath = get_full_path(name)
     print(f"saving to '{fullpath}'")
-    with open(fullpath, 'w') as f:
+    with open(fullpath, "w") as f:
         for journal in journal_data:
             f.write(journal)
 

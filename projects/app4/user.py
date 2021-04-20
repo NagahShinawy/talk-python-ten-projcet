@@ -2,7 +2,15 @@
 created by Nagaj at 18/04/2021
 """
 from projects.app4.cmd import CMD, AcceptOrIgnore
-from projects.app4.constants import CLOSE, ADD, LIST, ACCEPT, BASIC_MSG , HTML_MSG, JSON_MSG
+from projects.app4.constants import (
+    CLOSE,
+    ADD,
+    LIST,
+    ACCEPT,
+    BASIC_MSG,
+    HTML_MSG,
+    JSON_MSG,
+)
 from projects.app4.db import load, save, to_html, to_json
 from projects.app4.journal import Journal
 

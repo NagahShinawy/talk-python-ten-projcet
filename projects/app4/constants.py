@@ -2,10 +2,10 @@
 created by Nagaj at 19/04/2021
 """
 
-ACCEPT = 'y'
-CLOSE = 'x'
-LIST = 'l'
-ADD = 'a'
+ACCEPT = "y"
+CLOSE = "x"
+LIST = "l"
+ADD = "a"
 
 # ##############  messages ################
 
@@ -15,4 +15,4 @@ JSON_MSG = "Do you want to export to json ? y[yes], n[no]"
 
 # #############################
 
-BREAK_LINE = "#" * 50 + '\n'
+BREAK_LINE = "#" * 50 + "\n"
