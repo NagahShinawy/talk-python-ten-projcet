@@ -14,7 +14,7 @@ from projects.app4.constants import (
     NO_ITEMS_TO_SHOW,
     BYE,
 )
-from projects.app4.db import load, save, to_html, to_json
+from projects.app4.save_to import load, save, to_html, to_json
 from projects.app4.journal import Journal
 
 

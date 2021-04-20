@@ -55,6 +55,6 @@ def find(arr, k):
 
 
 if __name__ == "__main__":
-    # app(BASEDIR)
-    # main()
-    print(find([2, 3, 1], 1))
+    app(BASEDIR)
+    main()
+    # print(find([2, 3, 1], 1))
