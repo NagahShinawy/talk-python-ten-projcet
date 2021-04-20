@@ -26,3 +26,7 @@ BYE = "Done. Goodbye"
 # #############  break lines ################
 
 BREAK_LINE = "#" * 50 + "\n"
+
+
+# #######   saving msgs  ####################
+SAVING = "saving text to '{fullpath}'"

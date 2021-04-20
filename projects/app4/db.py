@@ -8,6 +8,7 @@ load journals, save journal, add new journal
 import json
 import os
 from typing import List
+from projects.app4.constants import SAVING
 
 
 import jinja2
@@ -30,7 +31,7 @@ def load() -> List[str]:
 
 def save(entries: List[str]):
     fullpath = get_full_path()
-    print(f"saving text to '{fullpath}'")
+    print(SAVING.format(fullpath=fullpath))
     with open(fullpath, "w") as f:
         for entry in entries:
             f.write(entry)
@@ -44,7 +45,7 @@ def to_html(entries):
     template = jinja2.Template(content)
     home = template.render(title="All Journals", entries=entries)
     saving__html_path = os.path.join(saves_path, "home.html")
-    print(f"saving html to '{saving__html_path}'")
+    print(SAVING.format(fullpath=saving__html_path))
     with open(saving__html_path, "w") as f:
         f.write(home)
 
@@ -52,7 +53,7 @@ def to_html(entries):
 def to_json(entries: List[str]):
     json_path, saves_path = get_saves_path_and_file_path("journals.json")
     data = [{"id": i + 1, "journal": entries[i].strip()} for i in range(len(entries))]
-    print(f"saving json to '{json_path}'")
+    print(SAVING.format(fullpath=json_path))
     with open(json_path, "w") as f:
         json.dump(data, f, indent=4)
 
