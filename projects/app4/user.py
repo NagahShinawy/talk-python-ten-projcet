@@ -10,6 +10,9 @@ from projects.app4.constants import (
     BASIC_MSG,
     HTML_MSG,
     JSON_MSG,
+    ENTER_TEXT,
+    NO_ITEMS_TO_SHOW,
+    BYE
 )
 from projects.app4.db import load, save, to_html, to_json
 from projects.app4.journal import Journal
@@ -20,7 +23,7 @@ class User:
         self.entries = []
 
     def add_entry(self) -> None:
-        text = input("Enter Your Text: ")
+        text = input(ENTER_TEXT)
         journal = Journal(text)
         self.entries.append(journal.text + "\n")
 
@@ -29,7 +32,7 @@ class User:
             for start, entry in enumerate(self.entries, start=1):
                 print(start, entry)
         else:
-            print("No Items")
+            print(NO_ITEMS_TO_SHOW)
 
     def event_loop(self) -> None:
         command = self.run_command()
@@ -52,7 +55,7 @@ class User:
         if self.accept_export(JSON_MSG) == ACCEPT:
             to_json(self.entries)
 
-        print("Done. Goodbye")
+        print(BYE)
 
     @staticmethod
     def accept_export(msg):
