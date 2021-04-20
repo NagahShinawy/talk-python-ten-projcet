@@ -65,16 +65,16 @@ class User:
 
         save(self.entries)
 
-        if self.accept_export(HTML_MSG) == ACCEPT:
+        if self.is_accept_export(HTML_MSG) == ACCEPT:
             to_html(self.entries)
 
-        if self.accept_export(JSON_MSG) == ACCEPT:
+        if self.is_accept_export(JSON_MSG) == ACCEPT:
             to_json(self.entries)
 
         print(BYE)
 
     @staticmethod
-    def accept_export(msg):
+    def is_accept_export(msg):
         """
 
         :param msg:
