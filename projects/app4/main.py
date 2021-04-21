@@ -5,6 +5,10 @@ from projects.app4.user import User
 
 
 def main():
+    """
+    entry point
+    :return:
+    """
     user = User()
     user.event_loop()
 

@@ -21,11 +21,13 @@ def load() -> List[str]:
     """
     data = []
     fullpath = get_full_path()
-    if os.path.exists(fullpath):
-        with open(fullpath, "r") as fin:
-            entries = fin.readlines()
-            for entry in entries:
-                data.append(entry)
+    if not os.path.exists(fullpath):
+        return data
+
+    with open(fullpath, "r") as fin:
+        entries = fin.readlines()
+        for entry in entries:
+            data.append(entry)
     return data
 
 
@@ -65,9 +67,9 @@ def to_json(entries: List[str]):
     :param entries:
     :return:
     """
-    (json_path, saves_path) = get_saves_path_and_file_path(
+    (json_path, saves_path) = get_saves_path_and_file_path(  # pylint: disable=W0612
         "journals.json"
-    )  # pylint: disable=W0612
+    )
     data = [{"id": i + 1, "journal": entries[i].strip()} for i in range(len(entries))]
     print(SAVING.format(fullpath=json_path))
     with open(json_path, "w") as file:
