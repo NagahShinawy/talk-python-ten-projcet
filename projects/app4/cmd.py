@@ -38,7 +38,7 @@ class CMD:
         return self.command == other
 
 
-class AcceptOrIgnore(CMD):  # pylint: disable=R0903
+class AcceptOrRefuse(CMD):  # pylint: disable=R0903
     """
         user accept or refuse
     """

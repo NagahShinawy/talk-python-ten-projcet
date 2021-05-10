@@ -1,7 +1,7 @@
 ﻿"""
 created by Nagaj at 18/04/2021
 """
-from projects.app4.cmd import CMD, AcceptOrIgnore
+from projects.app4.cmd import CMD, AcceptOrRefuse
 from projects.app4.constants import (
     CLOSE,
     ADD,
@@ -80,7 +80,7 @@ class User:
         :param msg:
         :return:
         """
-        return AcceptOrIgnore(input(msg))
+        return AcceptOrRefuse(input(msg))
 
     @staticmethod
     def run_command(opening_msg=OPENING_MSG):
