@@ -97,3 +97,8 @@ Let us take a look at these two use cases and describe the process with two illu
 WHEN YOUR PROGRAMM IS USED BY ANOTHER PROGRAM
 
 ===========================================
+
+pypi: python package index.
+CHECK live templates from pycharm for shourtcuts
+
+================================
