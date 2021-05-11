@@ -41,8 +41,14 @@ if __name__ == "__main__":
     primes = [2, 3, 5, 7, 11, 13, 17, 19, 23]
     #         0  1  2  3  4   5   6   7  8
     first_prime = primes[0]  # 2
-    last_prime = primes[-1]  # 2, 3
+    print(first_prime)
+    last_prime = primes[-1]  # 23
+    print(last_prime)
     lowest_four = primes[0:4]  # 2,3, 5, 7
+    print(lowest_four)
     lowest_four = primes[:4]  # 2, 3, 5, 7
+    print(lowest_four)
     middle = primes[3:6]  # 7, 11, 13
-    last_4 = primes[-4:]
+    print(middle)
+    last_4 = primes[-4:]  # 13, 17, 19, 23
+    print(last_4)
