@@ -1,8 +1,9 @@
 """
 created by Nagaj at 10/05/2021
 """
-from http import HTTPStatus
 from collections import namedtuple
+from http import HTTPStatus
+
 import requests
 from bs4 import BeautifulSoup
 
@@ -38,9 +39,9 @@ def get_html_from_web(validated_zipcode):
 
 
 def clean_up(text: str):
-    if not text:
-        return text
-    return text.strip()
+    if text:
+        text = text.strip()
+    return text
 
 
 def get_weather_from_html(html):
@@ -60,8 +61,15 @@ def get_weather_from_html(html):
         else:
             text = element + "-value"
         clean_up(text)
+        if element == "location":
+            text = find_city_and_state_from_location(element)
         report[element] = text
     return report
+
+
+def find_city_and_state_from_location(loc: str):
+    parts = loc.split("\n")
+    return parts[0].strip() if parts else False
 
 
 def main():
@@ -97,15 +105,42 @@ def primes_with_slices():
 
 
 if __name__ == "__main__":
-    main()
+    # main()
     # # primes_with_slices()
     WeatherReport = namedtuple(
         "WeatherReport", "location, condition, temp, scale"
-    )  # define class with attrs
-    egypt = WeatherReport("Egypt", "Overcast", "20", "C")  # init class values
+    )  # define class with attrs, WeatherReport is subclass of tuple, attrs is comma separated value
+    egypt = WeatherReport(location="Egypt", condition="Overcast", temp="20", scale="C")  # init class values
     print(egypt)
     print(
         f"Location is: '{egypt.location}' , Condition is: '{egypt.condition}', Temp is: '{egypt.temp}', Scale is: '{egypt.scale}'"
     )
+    print(f"LOCATION-TESTING: {egypt[0]}")  # you can access tuple using both index and attrs
     for value in egypt:
         print(value)
+
+    print("#" * 100)
+    t = 12, 4, "Cat", [5, 6, 7]
+    print(t)  # t is tuple
+    t, *others = 12, 4, "Cat", [5, 6, 7]  # using packing  (ربط) بجمع
+    print(t)  # 12
+    print(others)  # list of [ 4, "Cat", [5, 6, 7]]
+    print(*others)  # 4 Cat [5, 6, 7]]  # using unpacking (فك الربط) بفك التجميع
+    john, james, sara = ("JOHN", "JAMES", "SARA")  # using unpacking
+    print(john, james, sara)
+    tuple_with_one_item = 100  # this int
+    print(tuple_with_one_item, type(tuple_with_one_item))
+    tuple_with_one_item = 100,  # this tuple
+    print(tuple_with_one_item, type(tuple_with_one_item))
+    products = ("LAPTOP", "PHONE", "WATCH")
+    lap, phone, watch = products  # using unpacking to back to single variables.
+    print(lap)
+    print("*" * 50)
+    Player = namedtuple("PLayer",
+                        "name, age, team")  # create Player class with attrs, Player class is subclass of tuple
+    messi = Player(name="Leon Messi", age=35, team="Barca")  # create messi obj
+
+    # you can access values by both index and attrs.
+    print("Name:", messi.name, messi[0])
+    print("Age:", messi.age, messi[1])
+    print("Team:", messi.team, messi[2])
