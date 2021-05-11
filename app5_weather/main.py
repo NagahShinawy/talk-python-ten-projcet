@@ -1,9 +1,8 @@
 """
 created by Nagaj at 10/05/2021
 """
-from collections import namedtuple
 from http import HTTPStatus
-
+from collections import namedtuple
 import requests
 from bs4 import BeautifulSoup
 
@@ -53,6 +52,7 @@ def get_weather_from_html(html):
         "temp": WEATHER_TEMP_CSS,
         "scale": WEATHER_SCALE_CSS,
     }
+    report = dict()
     for element in elements:
         elm = soup.find(element)
         if elm is not None:
@@ -60,8 +60,8 @@ def get_weather_from_html(html):
         else:
             text = element + "-value"
         clean_up(text)
-        elements[element] = text
-    print(elements)
+        report[element] = text
+    return report
 
 
 def main():
@@ -69,7 +69,12 @@ def main():
     validated_zipcode = get_zipcode_from_user()
     html = get_html_from_web(validated_zipcode)
     if html is not False:
-        get_weather_from_html(html)
+        report = get_weather_from_html(html)
+        print(
+            f"Location is: '{report['location']}' , Condition is: '{report['condition']}', Temp is: '{report['temp']}',"
+            f" Scale is: '{report['scale']}'"
+        )
+
     else:
         print("SOMETHING WENT WRONG, TRY PLEASE TRY AGAIN.")
 
@@ -92,8 +97,8 @@ def primes_with_slices():
 
 
 if __name__ == "__main__":
-    # main()
-    # primes_with_slices()
+    main()
+    # # primes_with_slices()
     WeatherReport = namedtuple(
         "WeatherReport", "location, condition, temp, scale"
     )  # define class with attrs
