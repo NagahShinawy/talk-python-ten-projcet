@@ -22,8 +22,8 @@ WINDOWS_COMMAND = "explorer"
 LINUX = "Linux"
 LINUX_COMMAND = "xdg-open"
 
-MACOS_COMMAND = "Darwin"
-MACOS = "open"
+MACOS = "Darwin"
+MACOS_COMMAND = "open"
 
 
 # ###########  messages ##########################
