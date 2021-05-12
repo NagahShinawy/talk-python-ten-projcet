@@ -24,3 +24,10 @@ LINUX_COMMAND = "xdg-open"
 
 MACOS_COMMAND = "Darwin"
 MACOS = "open"
+
+
+# ###########  messages ##########################
+CREATE_FOLDER = "CREATING NEW FOLDER AT '{}'"
+NOT_SUPPORTED = "Don't Support Your OS '{}'"
+DOWNLOAD = "Downloading Cat: {}"
+DISPLAY = "Displaying Cats"
