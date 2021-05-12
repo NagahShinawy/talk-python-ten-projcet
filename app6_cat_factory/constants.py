@@ -11,9 +11,7 @@ CAT_NAME = "lolcat{i}"
 
 # ###############  SERVICE  ###################
 
-CATS_URL = (
-    "http://consuming-python-services-api.azurewebsites.net/cats/random/"
-)
+CATS_URL = "http://consuming-python-services-api.azurewebsites.net/cats/random/"
 
 # ###########  commands #######################
 WINDOWS = "Windows"
