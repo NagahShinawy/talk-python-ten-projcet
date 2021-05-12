@@ -110,12 +110,16 @@ if __name__ == "__main__":
     WeatherReport = namedtuple(
         "WeatherReport", "location, condition, temp, scale"
     )  # define class with attrs, WeatherReport is subclass of tuple, attrs is comma separated value
-    egypt = WeatherReport(location="Egypt", condition="Overcast", temp="20", scale="C")  # init class values
+    egypt = WeatherReport(
+        location="Egypt", condition="Overcast", temp="20", scale="C"
+    )  # init class values
     print(egypt)
     print(
         f"Location is: '{egypt.location}' , Condition is: '{egypt.condition}', Temp is: '{egypt.temp}', Scale is: '{egypt.scale}'"
     )
-    print(f"LOCATION-TESTING: {egypt[0]}")  # you can access tuple using both index and attrs
+    print(
+        f"LOCATION-TESTING: {egypt[0]}"
+    )  # you can access tuple using both index and attrs
     for value in egypt:
         print(value)
 
@@ -130,14 +134,15 @@ if __name__ == "__main__":
     print(john, james, sara)
     tuple_with_one_item = 100  # this int
     print(tuple_with_one_item, type(tuple_with_one_item))
-    tuple_with_one_item = 100,  # this tuple
+    tuple_with_one_item = (100,)  # this tuple
     print(tuple_with_one_item, type(tuple_with_one_item))
     products = ("LAPTOP", "PHONE", "WATCH")
     lap, phone, watch = products  # using unpacking to back to single variables.
     print(lap)
     print("*" * 50)
-    Player = namedtuple("PLayer",
-                        "name, age, team")  # create Player class with attrs, Player class is subclass of tuple
+    Player = namedtuple(
+        "PLayer", "name, age, team"
+    )  # create Player class with attrs, Player class is subclass of tuple
     messi = Player(name="Leon Messi", age=35, team="Barca")  # create messi obj
 
     # you can access values by both index and attrs.
