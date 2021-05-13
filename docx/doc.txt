@@ -119,5 +119,51 @@ OUTPUT : /c/Users/Nagaj/python37/Scripts/virtualenv
 $ which python3
 /c/msys64/mingw64/bin/python3
 -----------------------------
+apply ploymorphims using "get_defensive_roll". based on input (SmallAnimal, Dragon, creature, Wizard) you can call
+the same method but diffrenet implemntation based on instance ( SmallAnimal, Dragon, creature, Wizard)
 
+==========================
+DUCK TYPING
 
+n this lesson, you’ll learn about duck typing. This term comes from the saying “If it walks like a duck, and it quacks like a duck, then it must be a duck.” (There are other variations).
+
+Duck typing is a concept related to dynamic typing, where the type or the class of an object is less important than the methods it defines. When you use duck typing, you do not check types at all. Instead, you check for the presence of a given method or attribute.
+
+For example, you can call len() on any Python object that defines a .__len__() method:
+
+>>> class TheHobbit:
+...     def __len__(self):
+...         return 95022
+...
+...
+>>> the_hobbit = TheHobbit()
+
+>>> the_hobbit
+<__main__.TheHobbit object at 0x108deeef0>
+
+>>> len(the_hobbit)
+95022
+
+>>> my_str = "Hello World"
+>>> my_list = [34, 54, 65, 78]
+>>> my_dict = {"one": 123, "two": 456, "three": 789}
+
+>>> len(my_str)
+11
+>>> len(my_list)
+4
+>>> len(my_dict)
+3
+>>> len(the_hobbit)
+95022
+
+>>> my_int = 7
+>>> my_float = 42.3
+
+>>> len(my_int)
+Traceback (most recent call last):
+  File "<input>", line 1, in <module>
+    len(my_int)
+TypeError: object of type 'int' has no len()
+
+not interest in obj type it self , interest in it's actions like duck , ins in how obj (duck) walk, how swim, how talk.

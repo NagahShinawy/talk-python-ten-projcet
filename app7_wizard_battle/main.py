@@ -3,7 +3,7 @@ created by Nagaj at 13/05/2021
 """
 import random
 import time
-from actors import Wizard, Creature
+from actors import Wizard, Creature, SmallAnimal, Dragon
 from app7_wizard_battle.constants import (
     EXIT,
     GOOD_BYE,
@@ -39,10 +39,11 @@ def wizard_look(hero, creatures):
 
 def game_loop():
     creatures = [
-        Creature("Toad", 1),
-        Creature("Bat", 3),
-        Creature("Dragon", 50),
-        Creature("Evil Wizard", 1000),
+        SmallAnimal("Toad", 1),
+        Creature("Tiger", 12),
+        SmallAnimal("Bat", 3),
+        Dragon("Dragon", 50, scaliness=20, breaths_fire=False),
+        # Wizard("Evil Wizard", 1000),
     ]
     hero = Wizard("GandOlf", 75)
     while True:
