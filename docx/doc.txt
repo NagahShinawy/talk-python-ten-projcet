@@ -105,7 +105,7 @@ packing: store vars to container
 t, *others = 12, 4, "Cat", [5, 6, 7]  # using packing  (ربط) بجمع
 print(others)  # list of [ 4, "Cat", [5, 6, 7]]
 ------------------
-unpacking: return container like (list, tuple) back to single varaibles
+unpacking: return single varaibles from container like (list, tuple)
 print(*others)  # 4 Cat [5, 6, 7]]  # using unpacking (فك الربط) بفك التجميع
 john, james, sara = ("JOHN", "JAMES", "SARA")  # using unpacking
 print(john, james, sara)   # JOHN JAMES SARA
