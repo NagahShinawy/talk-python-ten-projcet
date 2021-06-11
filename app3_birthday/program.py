@@ -18,10 +18,10 @@ def get_birthday_from_user():
     return birthday
 
 
-def compute_days_between_dates(original_date, target_date):
-    this_year = datetime.date(target_date.year, original_date.month, original_date.day)
+def compute_days_between_dates(bday, today):
+    this_year = datetime.date(today.year, bday.month, bday.day)
 
-    dt = this_year - target_date
+    dt = this_year - today
     return dt.days
 
 
@@ -42,4 +42,5 @@ def main():
     print_birthday_information(number_of_days)
 
 
-main()
+if __name__ == '__main__':
+    main()
